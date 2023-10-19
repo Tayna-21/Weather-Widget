@@ -1,0 +1,208 @@
+@import 'reset.scss';
+@import 'vars.scss';
+@import 'font.scss';
+
+body {
+  font-family: "Helvetica";
+  font-weight: 400;
+}
+
+.wrapper {
+  width: 375px;
+  height: fit-content;
+  background-color: $blue_color;
+  padding: 20px 10px 40px;
+  margin: 0 auto;
+
+    @media (max-width: 540px) {
+      width: 100%;
+    }
+}
+
+.blue_font_color {
+  color: $blue_color;
+}
+
+.light_font_color {
+  color: $light_color;
+}
+
+.red_font_color {
+  color: $red_color;
+}
+
+.container {
+  width: 325px;
+  margin: 0 auto;
+
+  @media (max-width: 540px) {
+    width: auto;
+    max-width: 400px;
+  }
+
+  header {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100px;
+
+      .logo {
+        margin: 0 auto;
+        cursor: pointer;
+
+        &:hover {
+          transform: scale(1.05);
+          transition: .2s ease;
+          will-change: transform;
+        }
+      }
+
+      .search_bar {
+        position: relative;
+
+          input[type=text] {
+            width: 100%;
+            height: 40px;
+            padding: 10px 20px;
+            border-radius: 25px;
+            border: $light_color 2px solid;
+            background-color: $blue_color;
+            color: $light_color;
+            text-transform: capitalize;
+            font: italic 18px "Helvetica";
+
+            &:invalid {
+              border-color: red;
+            }
+
+            &::placeholder {
+              color: $light_color;
+              opacity: 50%;
+            }
+          }
+
+          #search_btn, #cancel_btn {
+            position: absolute;
+            top: 13px;
+            right: 20px;
+            border: none;
+            background-color: $blue_color;
+            cursor: pointer;
+
+            &:hover {
+              transform: scale(1.2);
+              transition: .2s ease;
+              will-change: transform;
+            }
+          }
+          .inactive {
+            display: none;
+          }
+      }
+
+      p, span {
+        font-size: 12px;
+      }
+
+      span {
+        text-transform: capitalize;
+      }
+  }
+
+  main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    row-gap: 25px;
+
+      .current_weather {
+        display: grid;
+        grid-template-columns: repeat(3, auto);
+        grid-template-rows: 80px;
+        background-color: $green_color;
+        border-radius: 15px;
+        padding: 15px 20px;
+        margin: 20px 0;
+        box-shadow: inset 4px 4px 14px #eafff7, inset -4px -4px 14px #80a596;
+        animation: daily_weather .5s ease-in-out;
+
+          .first_column, .second_column {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+          }
+
+          .second_column {
+            justify-content: flex-start;
+
+              p {
+                font-size: 16px;
+                text-transform: capitalize;
+                padding: 5px;
+              }
+          }
+
+          .current_weather_state_img img {
+            width: 80px;
+            height: 80px;
+          }
+
+          .current_temperature {
+            font-size: 54px;
+            font-weight: bold;
+          }
+      }
+
+      .daily_weather {
+        display: grid;
+        grid-template-columns: repeat(4, auto);
+        grid-template-rows: 65px;
+        background-color: $light_color;
+        border: 1px #253559 solid;
+        border-radius: 15px;
+        padding: 10px 20px;
+        box-shadow: inset 4px 4px 2px 2px #ffffff, inset -4px -4px 7px 2px #cccccc;
+        animation: daily_weather 1s ease-in-out;
+
+          .day_name, .daily_weather_state {
+            font-size: 20px;
+            text-transform: uppercase;
+            align-self: center;
+          }
+
+          .daily_weather_state {
+            font-size: 16px;
+          }
+
+          .daily_weather_icon {
+            align-self: center;
+            width: 70px;
+          }
+
+          .last_column {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            text-align: right;
+
+              .day, .night {
+                font-size: 10px;
+                opacity: 75%;
+              }
+          }
+      }
+
+      @keyframes daily_weather {
+        from {
+          opacity: 0%;
+          transform: translateY(-10px);
+        }
+
+        to {
+          opacity: 100%;
+          transform: translateY(0px);
+        }
+      }
+  }
+}

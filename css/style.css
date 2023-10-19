@@ -1,0 +1,354 @@
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html, body, div, span, object, iframe, figure, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, code, em, img, small, strike, strong, sub, sup, tt, b, u, i, ol, ul, li, fieldset, form, label, table, caption, tbody, tfoot, thead, tr, th, td, main, canvas, embed, footer, header, nav, section, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: none;
+     -moz-text-size-adjust: none;
+      -ms-text-size-adjust: none;
+          text-size-adjust: none;
+}
+
+footer, header, nav, section, main {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after, q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+input {
+  -webkit-appearance: none;
+  border-radius: 0;
+  border: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+@font-face {
+  font-family: "Helvetica";
+  src: url("../font/helvetica/helvetica-Regular.otf") format("otf");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+body {
+  font-family: "Helvetica";
+  font-weight: 400;
+}
+
+.wrapper {
+  width: 375px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  background-color: #2c3d63;
+  padding: 20px 10px 40px;
+  margin: 0 auto;
+}
+@media (max-width: 540px) {
+  .wrapper {
+    width: 100%;
+  }
+}
+
+.blue_font_color {
+  color: #2c3d63;
+}
+
+.light_font_color {
+  color: #f7f8f3;
+}
+
+.red_font_color {
+  color: #ff4f00;
+}
+
+.container {
+  width: 325px;
+  margin: 0 auto;
+}
+@media (max-width: 540px) {
+  .container {
+    width: auto;
+    max-width: 400px;
+  }
+}
+.container header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 100px;
+}
+.container header .logo {
+  margin: 0 auto;
+  cursor: pointer;
+}
+.container header .logo:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+  -webkit-transition: 0.2s ease;
+  transition: 0.2s ease;
+  will-change: transform;
+}
+.container header .search_bar {
+  position: relative;
+}
+.container header .search_bar input[type=text] {
+  width: 100%;
+  height: 40px;
+  padding: 10px 20px;
+  border-radius: 25px;
+  border: #f7f8f3 2px solid;
+  background-color: #2c3d63;
+  color: #f7f8f3;
+  text-transform: capitalize;
+  font: italic 18px "Helvetica";
+}
+.container header .search_bar input[type=text]:invalid {
+  border-color: red;
+}
+.container header .search_bar input[type=text]::-webkit-input-placeholder {
+  color: #f7f8f3;
+  opacity: 50%;
+}
+.container header .search_bar input[type=text]::-moz-placeholder {
+  color: #f7f8f3;
+  opacity: 50%;
+}
+.container header .search_bar input[type=text]:-ms-input-placeholder {
+  color: #f7f8f3;
+  opacity: 50%;
+}
+.container header .search_bar input[type=text]::-ms-input-placeholder {
+  color: #f7f8f3;
+  opacity: 50%;
+}
+.container header .search_bar input[type=text]::placeholder {
+  color: #f7f8f3;
+  opacity: 50%;
+}
+.container header .search_bar #search_btn, .container header .search_bar #cancel_btn {
+  position: absolute;
+  top: 13px;
+  right: 20px;
+  border: none;
+  background-color: #2c3d63;
+  cursor: pointer;
+}
+.container header .search_bar #search_btn:hover, .container header .search_bar #cancel_btn:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  -webkit-transition: 0.2s ease;
+  transition: 0.2s ease;
+  will-change: transform;
+}
+.container header .search_bar .inactive {
+  display: none;
+}
+.container header p, .container header span {
+  font-size: 12px;
+}
+.container header span {
+  text-transform: capitalize;
+}
+.container main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  row-gap: 25px;
+}
+.container main .current_weather {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (auto)[3];
+  grid-template-columns: repeat(3, auto);
+  -ms-grid-rows: 80px;
+  grid-template-rows: 80px;
+  background-color: #addcca;
+  border-radius: 15px;
+  padding: 15px 20px;
+  margin: 20px 0;
+  -webkit-box-shadow: inset 4px 4px 14px #eafff7, inset -4px -4px 14px #80a596;
+          box-shadow: inset 4px 4px 14px #eafff7, inset -4px -4px 14px #80a596;
+  -webkit-animation: daily_weather 0.5s ease-in-out;
+          animation: daily_weather 0.5s ease-in-out;
+}
+.container main .current_weather > *:nth-child(1) {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+}
+.container main .current_weather > *:nth-child(2) {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+}
+.container main .current_weather > *:nth-child(3) {
+  -ms-grid-row: 1;
+  -ms-grid-column: 3;
+}
+.container main .current_weather .first_column, .container main .current_weather .second_column {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.container main .current_weather .second_column {
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+.container main .current_weather .second_column p {
+  font-size: 16px;
+  text-transform: capitalize;
+  padding: 5px;
+}
+.container main .current_weather .current_weather_state_img img {
+  width: 80px;
+  height: 80px;
+}
+.container main .current_weather .current_temperature {
+  font-size: 54px;
+  font-weight: bold;
+}
+.container main .daily_weather {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (auto)[4];
+  grid-template-columns: repeat(4, auto);
+  -ms-grid-rows: 65px;
+  grid-template-rows: 65px;
+  background-color: #f7f8f3;
+  border: 1px #253559 solid;
+  border-radius: 15px;
+  padding: 10px 20px;
+  -webkit-box-shadow: inset 4px 4px 2px 2px #ffffff, inset -4px -4px 7px 2px #cccccc;
+          box-shadow: inset 4px 4px 2px 2px #ffffff, inset -4px -4px 7px 2px #cccccc;
+  -webkit-animation: daily_weather 1s ease-in-out;
+          animation: daily_weather 1s ease-in-out;
+}
+.container main .daily_weather > *:nth-child(1) {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+}
+.container main .daily_weather > *:nth-child(2) {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+}
+.container main .daily_weather > *:nth-child(3) {
+  -ms-grid-row: 1;
+  -ms-grid-column: 3;
+}
+.container main .daily_weather > *:nth-child(4) {
+  -ms-grid-row: 1;
+  -ms-grid-column: 4;
+}
+.container main .daily_weather .day_name, .container main .daily_weather .daily_weather_state {
+  font-size: 20px;
+  text-transform: uppercase;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+.container main .daily_weather .daily_weather_state {
+  font-size: 16px;
+}
+.container main .daily_weather .daily_weather_icon {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  width: 70px;
+}
+.container main .daily_weather .last_column {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  text-align: right;
+}
+.container main .daily_weather .last_column .day, .container main .daily_weather .last_column .night {
+  font-size: 10px;
+  opacity: 75%;
+}
+@-webkit-keyframes daily_weather {
+  from {
+    opacity: 0%;
+    -webkit-transform: translateY(-10px);
+            transform: translateY(-10px);
+  }
+  to {
+    opacity: 100%;
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+}
+@keyframes daily_weather {
+  from {
+    opacity: 0%;
+    -webkit-transform: translateY(-10px);
+            transform: translateY(-10px);
+  }
+  to {
+    opacity: 100%;
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+}

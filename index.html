@@ -1,0 +1,28 @@
+<!DOCTYPE HTML5>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="weather widget" content="weather forecast">
+    <title>"Weather forecast"</title>
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="./css/style.css" type="text/css">
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="container">
+        <header>
+          <strong class="logo"><a href="https://foxminded.ua" target="_blank"><img src="./icons/logo.svg" alt="Logo"></a></strong>
+          <div class="search_bar">
+            <input type="text" id="search_field" placeholder="search" autocorrect="on" pattern="[A-Za-z\s,-.]+[A-Za-z]" title="You can use letters only" autocomplete="off">
+            <button type="button" id="search_btn"><img src="./icons/search.svg"></button>
+            <button type="button" id="cancel_btn"><img src="./icons/cancel.svg"></button>
+          </div>
+          <p class="selected_location red_font_color"></p>
+        </header>
+        <main id="weather">
+        </main>
+      </div>
+    </div>
+    <script src="./js/script.js"></script>
+  </body>
+</html>
