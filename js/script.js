@@ -5,7 +5,7 @@ const showWeather = () => {
 
     async function loadWeather(lat,lon) {
         const apiKey = '21bbb2a01858dbd33c462b69bbe58159';
-        const apiUrl = 'http://api.openweathermap.org/data/2.5/forecast?units=metric'
+        const apiUrl = 'https://api.openweathermap.org/data/2.5/forecast?units=metric'
         const api = (`${apiUrl}&lat=${lat}&lon=${lon}&appid=${apiKey}`);
 
         fetch(api)
