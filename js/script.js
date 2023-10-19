@@ -167,7 +167,7 @@ const showWeather = () => {
 
         async function findLocation(cityName) {
             const apiKey = '21bbb2a01858dbd33c462b69bbe58159';
-            const api = (`http://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=${apiKey}`);
+            const api = (`https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=${apiKey}`);
 
             fetch(api)
               .then(response => response.json())
