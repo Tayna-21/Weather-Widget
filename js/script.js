@@ -92,7 +92,7 @@ const showWeather = () => {
                     return nameOfCity;
                 },
                 current_temperature: Math.round(data.list[0].main.temp),
-                current_weather_state: data.list[0].weather[0].main,
+                current_weather_state: data.list[0].weather[0].main.toLowerCase(),
                 future_temperature: Math.round(data.list[4].main.temp),
                 future_weather_state: data.list[4].weather[0].main,
             };
@@ -115,7 +115,7 @@ const showWeather = () => {
                 const dailyWeatherTemplate = `
                   <div class="daily_weather">
                     <p class="day_name red_font_color">${uniqueWeekdays[i]}</p>
-                    <img class="daily_weather_icon" src="./icons/${weatherState[i - 1]}.svg">
+                    <img class="daily_weather_icon" src="./icons/${weatherState[i - 1].toLowerCase()}.svg">
                     <p class="daily_weather_state blue_font_color">${weatherState[i - 1]}</p>
                     <div class="last_column">
                       <p class="day blue_font_color">Day</p>
